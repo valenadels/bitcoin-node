@@ -51,6 +51,7 @@ fn main() {
                 println!("ERROR: [{}]\n", "No se pudo leer un caracter del archivo");
                 process::exit(1) //TODO: reemplazar por devolver el error en main
             });
+            //print!("{}", caracter);
             match caracter{
                 'd' => pieza_blanca = Pieza::Dama(Info::new(Color::Blanco, &fila, &columna)),
                 'r' => pieza_blanca = Pieza::Rey(Info::new(Color::Blanco, &fila, &columna)),
@@ -64,20 +65,22 @@ fn main() {
                 'P' => pieza_negra = Pieza::Peon(Info::new(Color::Negro, &fila, &columna)),
                 'A' => pieza_negra = Pieza::Alfil(Info::new(Color::Negro, &fila, &columna)),
                 'C' => pieza_negra = Pieza::Caballo(Info::new(Color::Negro, &fila, &columna)),
+                '_' => {},
                     _ => {
                     println!("ERROR: [{}]\n", "No es un caracter válido");
                     process::exit(1) //TODO: reemplazar por devolver el error en main
                 }
             }
-            fila += 1;
         }
+        fila += 1;
     }
 
+    //print!("{:?}{:?}", pieza_blanca, pieza_negra);
     let tablero = crear_tablero(pieza_blanca, pieza_negra);
     let resultado = tablero.calcular_resultado();
     println!("{}", resultado);
 
 
-    //cerrar archivo!!
+    //cerrar archivo!!?
 }
 

@@ -1,6 +1,7 @@
 use crate::model::casilla::Casilla;
 use crate::model::color::Color;
 
+#[derive(Debug)]
 pub struct Info {
     pub color: Color,
     pub posicion: Casilla

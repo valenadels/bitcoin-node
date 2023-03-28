@@ -2,6 +2,7 @@ use crate::model::info::Info;
 use crate::model::casilla::Casilla;
 use crate::model::color::Color;
 
+#[derive(Debug)]
 pub enum Pieza {
     Dama(Info),
     Rey(Info),
