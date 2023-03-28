@@ -1,5 +1,5 @@
 #[derive(PartialEq, Debug)]
-pub enum Color{
+pub enum Color {
     Blanco,
-    Negro
+    Negro,
 }

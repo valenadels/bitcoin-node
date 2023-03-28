@@ -1,7 +1,6 @@
-pub mod pieza;
 pub mod casilla;
-pub mod resultado;
-pub mod info;
 pub mod color;
+pub mod info;
+pub mod pieza;
+pub mod resultado;
 pub mod tablero;
-

@@ -1,5 +1,5 @@
 #[derive(Debug)]
 pub struct Casilla {
-    pub fila: i32, 
-    pub columna: i32, 
+    pub fila: i32,
+    pub columna: i32,
 }

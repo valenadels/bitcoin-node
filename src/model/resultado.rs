@@ -1,10 +1,9 @@
-use std::fmt::{Display, Formatter, Error};
-
+use std::fmt::{Display, Error, Formatter};
 pub enum Resultado {
     Blanco,
     Negro,
     Empate,
-    Ninguno
+    Ninguno,
 }
 
 impl Display for Resultado {

@@ -4,18 +4,17 @@ use crate::model::color::Color;
 #[derive(Debug)]
 pub struct Info {
     pub color: Color,
-    pub posicion: Casilla
+    pub posicion: Casilla,
 }
 
 impl Info {
-    pub fn new(color: Color, fila: &i32, columna: &i32) -> Info {
+    pub fn new(color: Color, fila: i32, columna: i32) -> Info {
         Info {
             color: color,
             posicion: Casilla {
-                fila: *fila,
-                columna: *columna
-            }
+                fila: fila,
+                columna: columna,
+            },
         }
     }
-    
 }
