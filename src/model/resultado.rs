@@ -1,6 +1,7 @@
 use std::fmt::{Display, Error, Formatter};
 
 ///Enum que representa los posibles resultados del juego.
+#[derive(PartialEq, Debug)]
 pub enum Resultado {
     Blanco,
     Negro,

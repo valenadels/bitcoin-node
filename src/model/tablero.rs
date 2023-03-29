@@ -29,3 +29,21 @@ impl Tablero<'_> {
         }
     }
 }
+
+mod tests{
+    
+    #[test]
+    fn resultado_negro(){
+        use crate::model::{color::Color, info::Info, pieza::Pieza, tablero::Tablero, resultado::Resultado};
+        
+        let pieza_blanca = Pieza::Torre(Info::new(Color::Blanco, 0, 0));
+        let pieza_negra = Pieza::Rey(Info::new(Color::Negro, 1, 1));
+
+        let tablero = Tablero {
+            pieza_blanca: &pieza_blanca,
+            pieza_negra: &pieza_negra,
+        };
+        
+        assert_eq!(tablero.calcular_resultado(), Resultado::Negro);
+    }
+}

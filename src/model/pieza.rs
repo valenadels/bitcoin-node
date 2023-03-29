@@ -19,7 +19,7 @@ impl Pieza {
     fn distancia_manhattan(&self, casilla_1: &Casilla, casilla_2: &Casilla) -> i32 {
         let x = (casilla_1.fila - casilla_2.fila).abs();
         let y = (casilla_1.columna - casilla_2.columna).abs();
-        x + y
+        ((x * x + y * y) as f64).sqrt() as i32
     }
 
     ///Funcion que devuelve la información de la pieza correspondiente.
