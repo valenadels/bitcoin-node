@@ -9,22 +9,21 @@ use crate::model::pieza::Pieza;
 use crate::model::tablero::Tablero;
 
 const MAX_TABLERO: i32 = 8;
-//const MAX_PIEZAS: usize = 2;
 
-fn match_pieza(caracter: char, piezas: &mut Vec<Option<Pieza>>, fila: i32, columna: i32) {
+fn match_pieza(caracter: char, piezas: &mut (Option<Pieza>, Option<Pieza>), fila: i32, columna: i32) {
     match caracter {
-        'r' => piezas.insert(0, Some(Pieza::Rey(Info::new(Color::Blanco, fila, columna)))),
-        'd' => piezas.insert(0, Some(Pieza::Dama(Info::new(Color::Blanco, fila, columna)))),
-        't' => piezas.insert(0, Some(Pieza::Torre(Info::new(Color::Blanco, fila, columna)))),
-        'p' => piezas.insert(0, Some(Pieza::Peon(Info::new(Color::Blanco, fila, columna)))),
-        'a' => piezas.insert(0, Some(Pieza::Alfil(Info::new(Color::Blanco, fila, columna)))),
-        'c' => piezas.insert(0, Some(Pieza::Caballo(Info::new(Color::Blanco, fila, columna)))),
-        'D' => piezas.insert(1, Some(Pieza::Dama(Info::new(Color::Negro, fila, columna)))),
-        'R' => piezas.insert(1, Some(Pieza::Rey(Info::new(Color::Negro, fila, columna)))),
-        'T' => piezas.insert(1, Some(Pieza::Torre(Info::new(Color::Negro, fila, columna)))),
-        'P' => piezas.insert(1, Some(Pieza::Peon(Info::new(Color::Negro, fila, columna)))),
-        'A' => piezas.insert(1, Some(Pieza::Alfil(Info::new(Color::Negro, fila, columna)))),
-        'C' => piezas.insert(1, Some(Pieza::Caballo(Info::new(Color::Negro, fila, columna)))),
+        'r' => piezas.0 = Some(Pieza::Rey(Info::new(Color::Blanco, fila, columna))),
+        'd' => piezas.0 = Some(Pieza::Dama(Info::new(Color::Blanco, fila, columna))),
+        't' => piezas.0 = Some(Pieza::Torre(Info::new(Color::Blanco, fila, columna))),
+        'p' => piezas.0 = Some(Pieza::Peon(Info::new(Color::Blanco, fila, columna))),
+        'a' => piezas.0 = Some(Pieza::Alfil(Info::new(Color::Blanco, fila, columna))),
+        'c' => piezas.0 = Some(Pieza::Caballo(Info::new(Color::Blanco, fila, columna))),
+        'D' => piezas.1 = Some(Pieza::Dama(Info::new(Color::Negro, fila, columna))),
+        'R' => piezas.1 = Some(Pieza::Rey(Info::new(Color::Negro, fila, columna))),
+        'T' => piezas.1 = Some(Pieza::Torre(Info::new(Color::Negro, fila, columna))),
+        'P' => piezas.1 = Some(Pieza::Peon(Info::new(Color::Negro, fila, columna))),
+        'A' => piezas.1 = Some(Pieza::Alfil(Info::new(Color::Negro, fila, columna))),
+        'C' => piezas.1 = Some(Pieza::Caballo(Info::new(Color::Negro, fila, columna))),
         '_' => {}
         _ => {
             println!("ERROR: [{}]\n", "No es un caracter válido");
@@ -60,16 +59,8 @@ fn crear_tablero<'a>(pieza_blanca: &'a Pieza, pieza_negra: &'a Pieza) -> Tablero
     }
 }
 
-// fn piezas_a_resultado(piezas: Vec<Option<Pieza>>) -> Result<(Pieza, Pieza), String> {
-//     match (piezas[0], piezas[1]) {
-//         (Some(p1), Some(p2)) => Ok((p1, p2)),
-//         _ => Err("No se encontraron las piezas requeridas".to_string()) 
-//     }
-// }
-
-
-fn obtener_piezas(lineas: io::Lines<BufReader<File>>) -> Vec<Option<Pieza>> {
-    let mut piezas = vec![None, None];
+fn obtener_piezas(lineas: io::Lines<BufReader<File>>) -> (Option<Pieza>, Option<Pieza>){
+    let mut piezas: (Option<Pieza>, Option<Pieza>) = (None, None);
     let mut fila = 0;
 
     for linea in lineas {
@@ -94,33 +85,27 @@ fn obtener_piezas(lineas: io::Lines<BufReader<File>>) -> Vec<Option<Pieza>> {
     piezas
 }
 
-   
+fn juego_de_ajedrez(path: &String) {
+    let lineas = leer_lineas(path);
+    let piezas = obtener_piezas(lineas);
+
+    match piezas {
+       (Some(p1), Some(p2)) => {
+           let tablero = crear_tablero(&p1, &p2);
+            println!("{}", tablero.calcular_resultado());
+       }
+       _ => println!("Error: [{}]", "No se encontraron las piezas requeridas")
+    }
+}
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-   
 
     if args.len() != 2 {
         //TODO: error ;
     }
 
-    let path = &args[1];
-
-    let lineas = leer_lineas(path);
- 
-    let piezas = obtener_piezas(lineas);
-    print!("{:?}", piezas);
-    match (&piezas[0], &piezas[1]) {
-        (Some(blanca), Some(negra)) => {
-            let tablero = crear_tablero(blanca, negra);
-            let resultado = tablero.calcular_resultado();
-            println!("{}", resultado);
-        }
-        _ => {
-            println!("ERROR: [{}]\n", "No se encontraron las piezas requeridas");
-            process::exit(1) //TODO: reemplazar por devolver el error en main
-        }
-    }
-
-    //cerrar archivo!!?
+    juego_de_ajedrez(&args[1]);
 }
+
+
