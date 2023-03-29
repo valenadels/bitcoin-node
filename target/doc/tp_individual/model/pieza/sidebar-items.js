@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["Pieza","Representa una pieza del ajedrez. Contiene la información de la misma. Define comportamiento común a todas las piezas."]]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["Info","Contenedor de información de una pieza. Contiene el color y la posición de la misma."]]};

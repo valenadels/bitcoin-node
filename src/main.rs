@@ -10,6 +10,9 @@ use crate::model::tablero::Tablero;
 
 const MAX_TABLERO: i32 = 8;
 
+///Dado un caracter del archivo de texto, agrega la pieza correspondiente si es que encuentra coincidencia. 
+/// Si es blanca (minuscula) la agrega a la posicion 0 de la tupla. Si es negra (mayuscula) la agrega a la posicion 1 de la tupla.
+/// Si no encuentra coincidencia ni con '_', simplemente no agrega nada. 
 fn match_pieza(caracter: char, piezas: &mut (Option<Pieza>, Option<Pieza>), fila: i32, columna: i32) {
     match caracter {
         'r' => piezas.0 = Some(Pieza::Rey(Info::new(Color::Blanco, fila, columna))),
@@ -32,6 +35,7 @@ fn match_pieza(caracter: char, piezas: &mut (Option<Pieza>, Option<Pieza>), fila
     }
 }
 
+///Remueve los espacios que separan las columnas del tablero
 fn eliminar_espacios(_linea: String) -> String {
     _linea
         .chars()
@@ -39,6 +43,7 @@ fn eliminar_espacios(_linea: String) -> String {
         .collect::<String>()
 }
 
+///Dada una posicion del string (columna) retorna el caracter en esa posición o error si no se encuentra
 fn obtener_caracter(_linea: &String, columna: i32) -> char {
     let caracter = _linea.chars().nth(columna as usize).unwrap_or_else(|| {
         println!("ERROR: [{}]\n", "No se pudo leer un caracter del archivo");
@@ -47,11 +52,13 @@ fn obtener_caracter(_linea: &String, columna: i32) -> char {
     caracter
 }
 
+///Abre el archivo del path y devuelve las líneas del mismo (de tipo `Lines<BufReader<File>>`) o error si el path es inválido .
 fn leer_lineas(path: &String) -> io::Lines<BufReader<File>> {
     let archivo = File::open(path).unwrap(); //TODO: sacar unwrap
     return io::BufRead::lines(io::BufReader::new(archivo));
 }
 
+///Dadas dos piezas de lifetime 'a, crea un tablero con esas piezas y lo devuelve.
 fn crear_tablero<'a>(pieza_blanca: &'a Pieza, pieza_negra: &'a Pieza) -> Tablero<'a> {
     Tablero {
         pieza_blanca: pieza_blanca,
@@ -59,6 +66,17 @@ fn crear_tablero<'a>(pieza_blanca: &'a Pieza, pieza_negra: &'a Pieza) -> Tablero
     }
 }
 
+///Recibe las líneas del archivo (de tipo `Lines<BufReader<File>>`) y devuelve las piezas que se encuentran en el mismo.
+/// Casos de retorno:
+/// - (None, None): No se encontraron piezas en el archivo
+/// - (Some(pieza), None): Solo se encontró una blanca en el archivo
+/// - (None, Some(pieza)): Solo se encontró una negra en el archivo
+/// - (Some(pieza1), Some(pieza2)): Se encontraron ambas piezas en el archivo (blanca y negra)
+///    De esta manera, se podrá luego validar si las fichas son válidas o no.
+/// Verificacion de las dimensiones del tablero:
+/// - Para las columnas se leerán como máximo 8, si hay más, se descartan
+/// - De existir más de 8 filas, se devolverá un error
+/// En caso de algun error devolverá el mismo y lo mostrará por pantalla.
 fn obtener_piezas(lineas: io::Lines<BufReader<File>>) -> (Option<Pieza>, Option<Pieza>){
     let mut piezas: (Option<Pieza>, Option<Pieza>) = (None, None);
     let mut fila = 0;
@@ -85,6 +103,8 @@ fn obtener_piezas(lineas: io::Lines<BufReader<File>>) -> (Option<Pieza>, Option<
     piezas
 }
 
+///Función principal del juego. Recibe el path del archivo y ejecuta el mismo. Imprime un error por pantalla en caso de que no se encuentren las piezas requeridas o hayan errores internos.
+/// Como resultado será B,N,E o P dependiendo de si la pieza blanca gana, la negra, hay empate o no gana ninguno.
 fn juego_de_ajedrez(path: &String) {
     let lineas = leer_lineas(path);
     let piezas = obtener_piezas(lineas);
@@ -98,6 +118,10 @@ fn juego_de_ajedrez(path: &String) {
     }
 }
 
+
+///Función principal del programa. Recibe los argumentos de la línea de comandos y ejecuta el juego de ajedrez.
+/// Deberá ejecutarse de la siguiente manera: `cargo run -- <path>`. Se recomienda pasar el path absoluto del archivo para evitar inconvenientes, pero podría ser <archivo.txt> si se encuentra en el directorio padre a src.
+/// En caso de no recibir el path, se mostrará un error por pantalla.
 fn main() {
     let args: Vec<String> = env::args().collect();
 

@@ -1,6 +1,7 @@
 use crate::model::casilla::Casilla;
 use crate::model::color::Color;
 
+///Contenedor de información de una pieza. Contiene el color y la posición de la misma.
 #[derive(Debug)]
 pub struct Info {
     pub color: Color,
@@ -8,6 +9,7 @@ pub struct Info {
 }
 
 impl Info {
+    ///Crea una nueva instancia de Info totalmente incializada.
     pub fn new(color: Color, fila: i32, columna: i32) -> Info {
         Info {
             color: color,

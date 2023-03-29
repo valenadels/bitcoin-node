@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["Tablero","Representa el tablero de ajedrez.  Contiene las piezas que se encuentran en el mismo.  En el modelo simplificado que estamos considerando hay sólo 2, una negra y una blanca. Ambas deben tener un lifetime ’a que sea igual o mayor al del tablero, sino no tendría sentido un tablero vacío."]]};

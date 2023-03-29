@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":[["Resultado","Enum que representa los posibles resultados del juego."]]};

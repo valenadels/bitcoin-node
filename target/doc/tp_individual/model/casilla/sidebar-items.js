@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":[["Casilla","Representa una casilla del tablero de ajedrez. Contiene la fila y la columna. "]]};
