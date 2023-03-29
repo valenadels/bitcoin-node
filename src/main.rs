@@ -8,6 +8,7 @@ use crate::model::info::Info;
 use crate::model::pieza::Pieza;
 use crate::model::tablero::Tablero;
 
+//Maximo numero de filas y/o columnas del tablero
 const MAX_TABLERO: i32 = 8;
 
 ///Dado un caracter del archivo de texto, agrega la pieza correspondiente si es que encuentra coincidencia. 
