@@ -1,5 +1,4 @@
-use super::{resultado::Resultado, pieza::Pieza};
-
+use super::{pieza::Pieza, resultado::Resultado};
 
 ///Representa el tablero de ajedrez.
 /// Contiene las piezas que se encuentran en el mismo.
@@ -35,7 +34,9 @@ impl Tablero<'_> {
 
 #[cfg(test)]
 mod tests {
-    use crate::ajedrez::model::{pieza::Pieza, info::Info, color::Color, tablero::Tablero, resultado::Resultado};
+    use crate::ajedrez::model::{
+        color::Color, info::Info, pieza::Pieza, resultado::Resultado, tablero::Tablero,
+    };
 
     #[test]
     fn test_resultado_negro() {

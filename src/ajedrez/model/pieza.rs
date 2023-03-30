@@ -1,4 +1,4 @@
-use super::{info::Info, casilla::Casilla, color::Color};
+use super::{casilla::Casilla, color::Color, info::Info};
 
 ///Representa una pieza del ajedrez. Contiene la información de la misma.
 ///Define comportamiento común a todas las piezas.
