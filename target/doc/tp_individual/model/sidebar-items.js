@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":[["casilla",""],["color",""],["info",""],["pieza",""],["resultado",""],["tablero",""]]};

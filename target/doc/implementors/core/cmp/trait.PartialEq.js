@@ -1,3 +1,0 @@
-(function() {var implementors = {
-"tp_individual":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.68.0/core/cmp/trait.PartialEq.html\" title=\"trait core::cmp::PartialEq\">PartialEq</a>&lt;<a class=\"enum\" href=\"tp_individual/model/color/enum.Color.html\" title=\"enum tp_individual::model::color::Color\">Color</a>&gt; for <a class=\"enum\" href=\"tp_individual/model/color/enum.Color.html\" title=\"enum tp_individual::model::color::Color\">Color</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

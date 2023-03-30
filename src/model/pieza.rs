@@ -100,69 +100,188 @@ impl Pieza {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_distancia_manhattan() {
-        let casilla_1 = Casilla { fila: 1, columna: 1 };
-        let casilla_2 = Casilla { fila: 0, columna: 0 };
-        let pieza = Pieza::Rey(Info { color: Color::Blanco, posicion: casilla_1});
-        assert!(pieza.puede_capturar_adyacente(&Casilla { fila: 1, columna: 1 }, &casilla_2));
+        let casilla_1 = Casilla {
+            fila: 1,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 0,
+            columna: 0,
+        };
+        let pieza = Pieza::Rey(Info {
+            color: Color::Blanco,
+            posicion: casilla_1,
+        });
+        assert!(pieza.puede_capturar_adyacente(
+            &Casilla {
+                fila: 1,
+                columna: 1
+            },
+            &casilla_2
+        ));
     }
-    
+
     #[test]
     fn test_get_info() {
-        let casilla = Casilla { fila: 1, columna: 1 };
-        let info = Info { color: Color::Negro, posicion: casilla };
+        let casilla = Casilla {
+            fila: 1,
+            columna: 1,
+        };
+        let info = Info {
+            color: Color::Negro,
+            posicion: casilla,
+        };
         let pieza = Pieza::Dama(info);
-        assert_eq!(pieza.get_info(), &Info { color: Color::Negro, posicion: Casilla { fila: 1, columna: 1 }});
+        assert_eq!(
+            pieza.get_info(),
+            &Info {
+                color: Color::Negro,
+                posicion: Casilla {
+                    fila: 1,
+                    columna: 1
+                }
+            }
+        );
     }
-    
+
     #[test]
     fn test_puede_capturar_diagonal() {
-        let casilla_1 = Casilla { fila: 1, columna: 1 };
-        let casilla_2 = Casilla { fila: 3, columna: 3 };
-        let pieza = Pieza::Alfil(Info { color: Color::Blanco, posicion: casilla_1 });
-        assert!(pieza.puede_capturar_diagonal(&Casilla { fila: 1, columna: 1 }, &casilla_2));
+        let casilla_1 = Casilla {
+            fila: 1,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 3,
+            columna: 3,
+        };
+        let pieza = Pieza::Alfil(Info {
+            color: Color::Blanco,
+            posicion: casilla_1,
+        });
+        assert!(pieza.puede_capturar_diagonal(
+            &Casilla {
+                fila: 1,
+                columna: 1
+            },
+            &casilla_2
+        ));
     }
-    
+
     #[test]
     fn test_puede_capturar_recta() {
-        let casilla_1 = Casilla { fila: 1, columna: 1 };
-        let casilla_2 = Casilla { fila: 1, columna: 5 };
-        let pieza = Pieza::Torre(Info { color: Color::Blanco, posicion: casilla_1 });
-        assert!(pieza.puede_capturar_recta(&Casilla { fila: 1, columna: 1 }, &casilla_2));
+        let casilla_1 = Casilla {
+            fila: 1,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 1,
+            columna: 5,
+        };
+        let pieza = Pieza::Torre(Info {
+            color: Color::Blanco,
+            posicion: casilla_1,
+        });
+        assert!(pieza.puede_capturar_recta(
+            &Casilla {
+                fila: 1,
+                columna: 1
+            },
+            &casilla_2
+        ));
     }
-    
+
     #[test]
     fn test_puede_capturar_l() {
-        let casilla_1 = Casilla { fila: 1, columna: 1 };
-        let casilla_2 = Casilla { fila: 2, columna: 3 };
-        let pieza = Pieza::Caballo(Info { color: Color::Blanco, posicion: casilla_1 });
-        assert!(pieza.puede_capturar_l(&Casilla { fila: 1, columna: 1 }, &casilla_2));
+        let casilla_1 = Casilla {
+            fila: 1,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 2,
+            columna: 3,
+        };
+        let pieza = Pieza::Caballo(Info {
+            color: Color::Blanco,
+            posicion: casilla_1,
+        });
+        assert!(pieza.puede_capturar_l(
+            &Casilla {
+                fila: 1,
+                columna: 1
+            },
+            &casilla_2
+        ));
     }
-    
+
     #[test]
     fn test_puede_capturar_peon() {
-        let casilla_1 = Casilla { fila: 2, columna: 1 };
-        let casilla_2 = Casilla { fila: 3, columna: 2 };
-        let pieza = Pieza::Peon(Info { color: Color::Blanco, posicion: casilla_1 });
-        assert!(pieza.puede_capturar_peon(&Casilla { fila: 2, columna: 1 }, &casilla_2, &Color::Blanco));
+        let casilla_1 = Casilla {
+            fila: 2,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 3,
+            columna: 2,
+        };
+        let pieza = Pieza::Peon(Info {
+            color: Color::Blanco,
+            posicion: casilla_1,
+        });
+        assert!(pieza.puede_capturar_peon(
+            &Casilla {
+                fila: 2,
+                columna: 1
+            },
+            &casilla_2,
+            &Color::Blanco
+        ));
     }
 
     #[test]
     fn test_no_puede_capturar_peon() {
-        let casilla_1 = Casilla { fila: 2, columna: 1 };
-        let casilla_2 = Casilla { fila: 3, columna: 2 };
-        let pieza = Pieza::Peon(Info { color: Color::Negro, posicion: casilla_1 });
-        assert!(!pieza.puede_capturar_peon(&Casilla { fila: 2, columna: 1 }, &casilla_2, &Color::Negro));
+        let casilla_1 = Casilla {
+            fila: 2,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 3,
+            columna: 2,
+        };
+        let pieza = Pieza::Peon(Info {
+            color: Color::Negro,
+            posicion: casilla_1,
+        });
+        assert!(!pieza.puede_capturar_peon(
+            &Casilla {
+                fila: 2,
+                columna: 1
+            },
+            &casilla_2,
+            &Color::Negro
+        ));
     }
-    
+
     #[test]
     fn test_puede_capturar() {
-        let casilla_1 = Casilla { fila: 1, columna: 1 };
-        let casilla_2 = Casilla { fila: 3, columna: 3 };
-        let pieza_1 = Pieza::Alfil(Info { color: Color::Blanco, posicion: casilla_1 });
-        let pieza_2 = Pieza::Rey(Info { color: Color::Negro, posicion: casilla_2});
+        let casilla_1 = Casilla {
+            fila: 1,
+            columna: 1,
+        };
+        let casilla_2 = Casilla {
+            fila: 3,
+            columna: 3,
+        };
+        let pieza_1 = Pieza::Alfil(Info {
+            color: Color::Blanco,
+            posicion: casilla_1,
+        });
+        let pieza_2 = Pieza::Rey(Info {
+            color: Color::Negro,
+            posicion: casilla_2,
+        });
         assert!(pieza_1.puede_capturar(&pieza_2));
     }
 }
