@@ -8,7 +8,7 @@ use crate::model::info::Info;
 use crate::model::pieza::Pieza;
 use crate::model::tablero::Tablero;
 
-//Maximo numero de filas y/o columnas del tablero
+//Maximo numero de filas y columnas del tablero
 const MAX_TABLERO: i32 = 8;
 
 ///Dado un caracter del archivo de texto, agrega la pieza correspondiente si es que encuentra coincidencia. 
@@ -134,3 +134,53 @@ fn main() {
 }
 
 
+#[cfg(test)]
+mod tests{
+    use super::*;
+
+    #[test]
+    fn test_eliminar_espacios(){
+        let linea = String::from("a b c d e f g h");
+        let linea_sin_espacios = eliminar_espacios(linea);
+        assert_eq!(linea_sin_espacios, "abcdefgh");
+    }
+
+    #[test]
+    fn test_obtener_caracter(){
+        let linea = String::from("abcdefgh");
+        let caracter = obtener_caracter(&linea, 0);
+        assert_eq!(caracter, 'a');
+    }
+
+    #[test]
+    fn test_obtener_piezas(){
+       
+    }
+
+    #[test]
+    fn test_match_pieza() {
+        let mut piezas: (Option<Pieza>, Option<Pieza>) = (None, None);
+        match_pieza('r', &mut piezas, 1, 1);
+        assert_eq!(piezas.0.as_ref().unwrap(), &Pieza::Rey(Info::new(Color::Blanco, 1, 1)));
+
+        match_pieza('D', &mut piezas, 2, 2);
+        assert_eq!(piezas.1.as_ref().unwrap(), &Pieza::Dama(Info::new(Color::Negro, 2, 2)));
+
+        match_pieza('_', &mut piezas, 3, 3);
+        assert_eq!(piezas, (Some(Pieza::Rey(Info::new(Color::Blanco, 1, 1))), Some(Pieza::Dama(Info::new(Color::Negro, 2, 2)))));
+
+        //match_pieza('x', &mut piezas, 4, 4); //descomentar despues de poner que devuelve el error
+        assert_eq!(piezas, (Some(Pieza::Rey(Info::new(Color::Blanco, 1, 1))), Some(Pieza::Dama(Info::new(Color::Negro, 2, 2)))));
+    }
+
+    #[test]
+    fn test_crear_tablero() {
+        let pieza_blanca = Pieza::Peon(Info::new(Color::Blanco, 2, 1));
+        let pieza_negra = Pieza::Peon(Info::new(Color::Negro, 7, 1));
+        let tablero = crear_tablero(&pieza_blanca, &pieza_negra);
+        assert_eq!(*tablero.pieza_blanca, pieza_blanca);
+        assert_eq!(*tablero.pieza_negra, pieza_negra);
+    }
+
+
+}

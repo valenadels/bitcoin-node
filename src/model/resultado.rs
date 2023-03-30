@@ -21,3 +21,21 @@ impl Display for Resultado {
         write!(f, "{}", r)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_display() {
+        let b = Resultado::Blanco;
+        let n = Resultado::Negro;
+        let e = Resultado::Empate;
+        let p = Resultado::Ninguno;
+
+        assert_eq!(format!("{}", b), "B");
+        assert_eq!(format!("{}", n), "N");
+        assert_eq!(format!("{}", e), "E");
+        assert_eq!(format!("{}", p), "P");
+    }
+}

@@ -2,7 +2,7 @@ use crate::model::casilla::Casilla;
 use crate::model::color::Color;
 
 ///Contenedor de información de una pieza. Contiene el color y la posición de la misma.
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Info {
     pub color: Color,
     pub posicion: Casilla,
