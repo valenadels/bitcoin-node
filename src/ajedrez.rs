@@ -51,10 +51,10 @@ fn eliminar_espacios(_linea: String) -> String {
 }
 
 ///Dada una posicion del string (columna) retorna el caracter en esa posición o error si no se encuentra
-fn obtener_caracter(_linea: &String, columna: i32) -> Result<char, String> {
+fn obtener_caracter(_linea: &str, columna: i32) -> Result<char, String> {
     match _linea.chars().nth(columna as usize) {
         Some(c) => Ok(c),
-        None => return Err(String::from("No se pudo leer un caracter del archivo")),
+        None => Err(String::from("No se pudo leer un caracter del archivo")),
     }
 }
 
@@ -69,8 +69,8 @@ fn leer_lineas(path: &String) -> Result<io::Lines<BufReader<File>>, String> {
 ///Dadas dos piezas de lifetime 'a, crea un tablero con esas piezas y lo devuelve.
 fn crear_tablero<'a>(pieza_blanca: &'a Pieza, pieza_negra: &'a Pieza) -> Tablero<'a> {
     Tablero {
-        pieza_blanca: pieza_blanca,
-        pieza_negra: pieza_negra,
+        pieza_blanca,
+        pieza_negra,
     }
 }
 
@@ -117,9 +117,9 @@ pub fn inicializar_piezas(path: &String) -> Result<(Option<Pieza>, Option<Pieza>
 }
 
 ///Dadas las piezas, las pone en el tablero. En caso de que no se encuentren las piezas requeridas, devuelve un error.
-pub fn comenzar_juego<'a>(
-    piezas: &'a (Option<Pieza>, Option<Pieza>),
-) -> Result<Tablero<'a>, String> {
+pub fn comenzar_juego(
+    piezas: &'_ (Option<Pieza>, Option<Pieza>),
+) -> Result<Tablero<'_>, String> {
     match piezas {
         (Some(blanca), Some(negra)) => Ok(crear_tablero(blanca, negra)),
         _ => Err(String::from(
@@ -129,7 +129,7 @@ pub fn comenzar_juego<'a>(
 }
 
 pub fn jugar_ajedrez(tablero: &Tablero) -> model::resultado::Resultado{
-   return tablero.calcular_resultado();
+   tablero.calcular_resultado()
 }
 
 #[cfg(test)]

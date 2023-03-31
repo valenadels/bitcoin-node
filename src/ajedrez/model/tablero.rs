@@ -18,8 +18,8 @@ impl Tablero<'_> {
     /// Empate: indica que ambas piezas pueden capturar.
     /// Ninguna: indica que ninguna pieza puede capturar.
     pub fn calcular_resultado(&self) -> Resultado {
-        let blanca_captura = self.pieza_blanca.puede_capturar(&self.pieza_negra);
-        let negra_captura = self.pieza_negra.puede_capturar(&self.pieza_blanca);
+        let blanca_captura = self.pieza_blanca.puede_capturar(self.pieza_negra);
+        let negra_captura = self.pieza_negra.puede_capturar(self.pieza_blanca);
         if blanca_captura && negra_captura {
             Resultado::Empate
         } else if blanca_captura {
