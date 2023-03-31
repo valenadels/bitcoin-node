@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io;
 use std::io::{BufRead, BufReader, Lines};
-mod model;
+pub mod model;
 use model::color::Color;
 use model::info::Info;
 use model::pieza::Pieza;
