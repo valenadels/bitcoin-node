@@ -117,9 +117,7 @@ pub fn inicializar_piezas(path: &String) -> Result<(Option<Pieza>, Option<Pieza>
 }
 
 ///Dadas las piezas, las pone en el tablero. En caso de que no se encuentren las piezas requeridas, devuelve un error.
-pub fn comenzar_juego(
-    piezas: &'_ (Option<Pieza>, Option<Pieza>),
-) -> Result<Tablero<'_>, String> {
+pub fn comenzar_juego(piezas: &'_ (Option<Pieza>, Option<Pieza>)) -> Result<Tablero<'_>, String> {
     match piezas {
         (Some(blanca), Some(negra)) => Ok(crear_tablero(blanca, negra)),
         _ => Err(String::from(
@@ -128,8 +126,8 @@ pub fn comenzar_juego(
     }
 }
 
-pub fn jugar_ajedrez(tablero: &Tablero) -> model::resultado::Resultado{
-   tablero.calcular_resultado()
+pub fn jugar_ajedrez(tablero: &Tablero) -> model::resultado::Resultado {
+    tablero.calcular_resultado()
 }
 
 #[cfg(test)]

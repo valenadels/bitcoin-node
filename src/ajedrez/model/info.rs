@@ -12,10 +12,7 @@ impl Info {
     pub fn new(color: Color, fila: i32, columna: i32) -> Info {
         Info {
             color,
-            posicion: Casilla {
-               fila,
-               columna,
-            },
+            posicion: Casilla { fila, columna },
         }
     }
 }

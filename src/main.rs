@@ -13,12 +13,11 @@ fn main() {
         println!("ERROR: [No se recibió el path del archivo]");
     } else if let Ok(piezas) = inicializar_piezas(&args[1]) {
         if let Ok(tablero) = comenzar_juego(&piezas) {
-                println!("{}", jugar_ajedrez(&tablero));
-            } else {
-                println!("Error: [No se encontraron las piezas requeridas]");
-            }
+            println!("{}", jugar_ajedrez(&tablero));
+        } else {
+            println!("Error: [No se encontraron las piezas requeridas]");
+        }
     } else {
         println!("Error: [No se encontraron las piezas requeridas]");
     }
-    
 }
