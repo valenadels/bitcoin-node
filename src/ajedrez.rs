@@ -126,6 +126,7 @@ pub fn comenzar_juego(piezas: &'_ (Option<Pieza>, Option<Pieza>)) -> Result<Tabl
     }
 }
 
+///Función que se encarga de ejecutar el juego. Recibe el tablero y devuelve el resultado del mismo.
 pub fn jugar_ajedrez(tablero: &Tablero) -> model::resultado::Resultado {
     tablero.calcular_resultado()
 }

@@ -5,12 +5,12 @@ use super::{pieza::Pieza, resultado::Resultado};
 /// En el modelo simplificado que estamos considerando hay sólo 2, una negra y una blanca.
 /// Ambas deben tener un lifetime 'a que sea igual o mayor al del tablero, sino no tendría sentido un tablero vacío.
 ///Una observación: El tablero se considera siempre empezando con (0,0) en la esquina inferior izquierda (como si se lo estuviera viendo desde blancas).
+
 #[derive(Debug)]
 pub struct Tablero<'a> {
     pub pieza_blanca: &'a Pieza,
     pub pieza_negra: &'a Pieza,
 }
-
 impl Tablero<'_> {
     ///Determina el resultado del juego:
     /// Blanco: indica que solo la pieza blanca pueden capturar.
