@@ -1,7 +1,6 @@
-use std::env;
-
-mod ajedrez;
 use ajedrez::{comenzar_juego, inicializar_piezas, jugar_ajedrez};
+use std::env;
+use tp_individual::ajedrez;
 
 ///Función principal del programa. Recibe el argumento de la línea de comandos y ejecuta el juego de ajedrez.
 /// Deberá ejecutarse de la siguiente manera: `cargo run -- <path>`. Se recomienda pasar el path absoluto del archivo para evitar inconvenientes, pero podría ser <archivo.txt> si se encuentra en el directorio padre a src.
