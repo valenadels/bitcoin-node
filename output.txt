@@ -1,0 +1,63 @@
+
+running 19 tests
+test ajedrez::model::pieza::tests::test_distancia_manhattan ... ok
+test ajedrez::model::pieza::tests::test_get_info ... ok
+test ajedrez::model::pieza::tests::test_no_puede_capturar_peon ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_l ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_diagonal ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_recta ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_peon ... ok
+test ajedrez::model::resultado::tests::test_display ... ok
+test ajedrez::model::tablero::tests::test_resultado_blanco ... ok
+test ajedrez::model::tablero::tests::test_resultado_empate ... ok
+test ajedrez::model::tablero::tests::test_resultado_negro ... ok
+test ajedrez::model::tablero::tests::test_resultado_ninguno_gana ... ok
+test ajedrez::tests::test_comenzar_juego ... ok
+test ajedrez::tests::test_crear_tablero ... ok
+test ajedrez::tests::test_eliminar_espacios ... ok
+test ajedrez::tests::test_obtener_caracter ... ok
+test ajedrez::tests::test_obtener_piezas ... ok
+test ajedrez::tests::test_match_pieza ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 19 tests
+test ajedrez::model::pieza::tests::test_get_info ... ok
+test ajedrez::model::pieza::tests::test_no_puede_capturar_peon ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar ... ok
+test ajedrez::model::pieza::tests::test_distancia_manhattan ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_diagonal ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_l ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_peon ... ok
+test ajedrez::model::pieza::tests::test_puede_capturar_recta ... ok
+test ajedrez::model::resultado::tests::test_display ... ok
+test ajedrez::model::tablero::tests::test_resultado_blanco ... ok
+test ajedrez::model::tablero::tests::test_resultado_empate ... ok
+test ajedrez::model::tablero::tests::test_resultado_negro ... ok
+test ajedrez::model::tablero::tests::test_resultado_ninguno_gana ... ok
+test ajedrez::tests::test_comenzar_juego ... ok
+test ajedrez::tests::test_crear_tablero ... ok
+test ajedrez::tests::test_eliminar_espacios ... ok
+test ajedrez::tests::test_match_pieza ... ok
+test ajedrez::tests::test_obtener_caracter ... ok
+test ajedrez::tests::test_obtener_piezas ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 5 tests
+test test_ajedrez_b ... ok
+test test_ajedrez_dimension_invalida ... ok
+test test_ajedrez_n ... ok
+test test_ajedrez_e ... ok
+test test_ajedrez_p ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

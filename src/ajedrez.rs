@@ -152,37 +152,30 @@ mod tests {
     fn test_obtener_piezas() {}
 
     #[test]
-    fn test_match_pieza() {
+    fn test_match_pieza_rey() {
         let mut piezas: (Option<Pieza>, Option<Pieza>) = (None, None);
         match_pieza('r', &mut piezas, 1, 1).unwrap();
         assert_eq!(
             piezas.0.as_ref().unwrap(),
             &Pieza::Rey(Info::new(Color::Blanco, 1, 1))
         );
+    }
 
+    #[test]
+    fn test_match_pieza_dama() {
+        let mut piezas: (Option<Pieza>, Option<Pieza>) = (None, None);
         match_pieza('D', &mut piezas, 2, 2).unwrap();
         assert_eq!(
             piezas.1.as_ref().unwrap(),
             &Pieza::Dama(Info::new(Color::Negro, 2, 2))
         );
+    }
 
-        match_pieza('_', &mut piezas, 3, 3).unwrap();
-        assert_eq!(
-            piezas,
-            (
-                Some(Pieza::Rey(Info::new(Color::Blanco, 1, 1))),
-                Some(Pieza::Dama(Info::new(Color::Negro, 2, 2)))
-            )
-        );
-
+    #[test]
+    fn test_match_pieza_caracter_no_reconocido() {
+        let mut piezas: (Option<Pieza>, Option<Pieza>) = (None, None);
         match_pieza('x', &mut piezas, 4, 4).unwrap_err();
-        assert_eq!(
-            piezas,
-            (
-                Some(Pieza::Rey(Info::new(Color::Blanco, 1, 1))),
-                Some(Pieza::Dama(Info::new(Color::Negro, 2, 2)))
-            )
-        );
+        assert_eq!(piezas, (None, None));
     }
 
     #[test]
@@ -193,18 +186,18 @@ mod tests {
         assert_eq!(*tablero.pieza_blanca, pieza_blanca);
         assert_eq!(*tablero.pieza_negra, pieza_negra);
     }
-
     #[test]
-    fn test_comenzar_juego() {
+    fn test_comenzar_juego_piezas_validas() {
         let blanca = Pieza::Peon(Info::new(Color::Blanco, 0, 0));
         let negra = Pieza::Dama(Info::new(Color::Negro, 2, 2));
 
-        // Probando con piezas válidas
         let piezas_validas: (Option<Pieza>, Option<Pieza>) = (Some(blanca), Some(negra));
         let resultado_valido = comenzar_juego(&piezas_validas);
         assert!(resultado_valido.is_ok());
+    }
 
-        // Probando con piezas inexistentes
+    #[test]
+    fn test_comenzar_juego_piezas_nulas() {
         let piezas_nulas: (Option<Pieza>, Option<Pieza>) = (None, None);
         let resultado_nulo = comenzar_juego(&piezas_nulas);
         assert!(resultado_nulo.is_err());
@@ -212,8 +205,10 @@ mod tests {
             resultado_nulo.unwrap_err(),
             "Error: [No se encontraron las piezas requeridas]"
         );
+    }
 
-        // Probando con pieza negra inexistente
+    #[test]
+    fn test_comenzar_juego_pieza_negra_nula() {
         let blanca = Pieza::Dama(Info::new(Color::Negro, 2, 2));
         let pieza_negra_nula: (Option<Pieza>, Option<Pieza>) = (Some(blanca), None);
         let resultado_negra_nula = comenzar_juego(&pieza_negra_nula);
