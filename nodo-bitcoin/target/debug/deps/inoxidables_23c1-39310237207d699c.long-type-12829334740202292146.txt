@@ -1,0 +1,1 @@
+Result<MutexGuard<'_, std::sync::mpsc::Receiver<std::string::String>>, PoisonError<MutexGuard<'_, std::sync::mpsc::Receiver<std::string::String>>>>

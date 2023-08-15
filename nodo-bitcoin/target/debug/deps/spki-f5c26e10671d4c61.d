@@ -1,0 +1,10 @@
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/deps/spki-f5c26e10671d4c61.rmeta: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/lib.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/algorithm.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/error.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/spki.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/traits.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/../README.md
+
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/deps/spki-f5c26e10671d4c61.d: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/lib.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/algorithm.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/error.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/spki.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/traits.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/../README.md
+
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/lib.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/algorithm.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/error.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/spki.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/traits.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spki-0.7.2/src/../README.md:

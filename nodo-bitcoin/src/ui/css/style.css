@@ -1,0 +1,10 @@
+.box-container {
+    border-width: 1px;
+    padding: 5px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+window {
+    background-color: #F5F5F5;
+}
+

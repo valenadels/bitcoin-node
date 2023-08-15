@@ -1,0 +1,8 @@
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/build/target-lexicon-ab185fd6029e614c/build_script_build-ab185fd6029e614c: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/build.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/data_model.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/triple.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/targets.rs
+
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/build/target-lexicon-ab185fd6029e614c/build_script_build-ab185fd6029e614c.d: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/build.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/data_model.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/triple.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/targets.rs
+
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/build.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/data_model.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/triple.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/target-lexicon-0.12.7/src/targets.rs:

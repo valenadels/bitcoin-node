@@ -1,0 +1,10 @@
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/deps/base16ct-79be8e1a20a5fef5.rmeta: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/lib.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/lower.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/mixed.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/upper.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/display.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/error.rs
+
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/deps/base16ct-79be8e1a20a5fef5.d: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/lib.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/lower.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/mixed.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/upper.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/display.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/error.rs
+
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/lib.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/lower.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/mixed.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/upper.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/display.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/base16ct-0.2.0/src/error.rs:

@@ -1,0 +1,10 @@
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/deps/pkcs8-e9770e5a518982c0.rmeta: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/lib.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/error.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/private_key_info.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/traits.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/version.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/../README.md
+
+/home/valentinaadelsflugel/23C1-Inoxidables/target/debug/deps/pkcs8-e9770e5a518982c0.d: /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/lib.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/error.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/private_key_info.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/traits.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/version.rs /home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/../README.md
+
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/lib.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/error.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/private_key_info.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/traits.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/version.rs:
+/home/valentinaadelsflugel/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pkcs8-0.10.2/src/../README.md:
